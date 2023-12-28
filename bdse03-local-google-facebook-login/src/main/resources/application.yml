@@ -1,0 +1,23 @@
+spring:
+  security:
+      oauth2:
+        client:
+          registration:
+            google:
+              clientId: 709596880258-ok8elisit257eojds99dle592d15c951.apps.googleusercontent.com
+              clientSecret: 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
+              redirectUri: http://localhost:8080/oauth2/callback/google
+              scope:
+                - email
+                - profile
+app:
+  auth:
+    tokenSecret: mdseapiintegrationdevelopment
+    tokenExpirationMsec: 864000
+    
+  oauth2:
+    # After successfully authenticating with the OAuth2 Provider,
+    # we'll be generating an auth token for the user and sending the token to the
+    # redirectUri mentioned by the client in the /oauth2/authorize request.
+    authorizedRedirectUris:
+    - http://localhost:5173/oauth2/redirect
